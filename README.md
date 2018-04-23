@@ -1,2 +1,2 @@
-# Challenges
-Programming challenges that I've completed
+# Algorithms
+Various algorithms I've completed.
