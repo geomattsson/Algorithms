@@ -1,4 +1,4 @@
-package algorithms;
+package uppgift5;
 
 /**
  * Tenta written by Gustav Mattsson
