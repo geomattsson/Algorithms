@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="canvas.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div class="container content">
+        <div class="row">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="color-select" class="col-sm-4 col-form-label">Color: </label>
+                    <select class="form-control" id="color-select" onchange="switchColor()">
+                        <option>Black</option>
+                        <option>Red</option>
+                        <option>Green</option>
+                        <option>Blue</option>
+                        <option>White</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="size-select" class="col-sm-4 col-form-label">Size: </label>
+                    <select class="form-control" id="size-select" onchange="switchSize()">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="col-auto">
+                        <a href="#" class="btn btn-warning" onclick="clearCanvas();sendData();">Clear</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <canvas id="canvas" width="400" height="300"></canvas>
+            </div>
+        </div>
+        Result:
+        <div id="send"></div>
+        <div id="result">Test</div>
+    </div>
+
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- Custom Scripts -->
+    <script src="canvas.js"></script>
+    <script>
+
+
+    </script>
+</body>
+
+</html>
