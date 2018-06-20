@@ -1,0 +1,85 @@
+@model DistNet.Models.HomeViewModels.WriteViewModel
+@{
+    ViewData["Title"] = "Write";
+}
+
+
+<div class="row">
+    <div class="col-md-offset-2 col-md-8">
+        <h3>Write a new message</h3>
+        @if (ViewData["MSG-TITLE"] != null)
+        {
+            <div class="alert alert-success alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                Message <strong>@ViewData["MSG-TITLE"]</strong> sent to <strong>@ViewData["MSG-RECIPIENTS"]</strong> at <strong>@ViewData["MSG-TIME"]</strong>
+            </div>
+        }
+        <form asp-controller="Home" asp-action="Write" method="post">
+            <div class="form-group">
+                <label asp-for="Recipients"></label>
+                <div class="input-group">
+                    <input class="modal-list form-control" asp-for="Recipients"
+                           placeholder="Recipients" readonly="readonly"
+                           value="@if (Model != null) {<text>@Model.Recipients</text>}">
+                <span class="input-group-btn">
+                        <a href="#modal-receivers" class="btn btn-success" data-toggle="modal" onclick="getU(); getG();">Add Recipients</a>
+                    </span>
+                </div>
+
+                <span asp-validation-for="Recipients" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input class="form-control" placeholder="Title" asp-for="Title">
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Message"></label>
+                <textarea class="form-control" id="ta-message" rows="3" asp-for="Message"></textarea>
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary w-right">Send message</button>
+            <button type="reset" class="btn btn-warning">Clear Fields</button>
+        </form>
+    </div>
+</div>
+
+
+@*
+    Original source code for this modal is from:
+    https://bootsnipp.com/snippets/featured/sign-in-sign-up-dual-modal
+*@
+<!-- Modal -->
+<div class="modal fade" id="modal-receivers" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <br>
+            <div class="bs-example bs-example-tabs">
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="nav-first active"><a href="#user" data-toggle="tab">Users</a></li>
+                    <li class=""><a href="#group" data-toggle="tab">Groups</a></li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="user">
+                    </div>
+                    <div class="tab-pane fade" id="group">
+                        s
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <center>
+                    <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Close</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/write.js"></script>
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

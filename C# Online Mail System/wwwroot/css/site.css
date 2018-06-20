@@ -1,0 +1,193 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+/* CUSTOM CSS FOR DistNet*/
+.read {
+    margin-top: 20px;
+}
+
+.msg-block {
+    margin-top: -1px;
+    padding: 5px 3px 5px 3px;
+    color: black;
+}
+
+    .msg-block.unread {
+        font-weight: bold;
+    }
+
+.titleNdate {
+    display: block;
+}
+
+#date-right {
+    float: right;
+}
+
+.Message {
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.msg-desc {
+    margin-bottom: -5px;
+}
+
+.msg-update {
+    float: right;
+}
+
+.msg-update-btn {
+    float: right;
+    font-size: 18px;
+}
+
+.msg-default {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.msg-chosen {
+    background-color: Highlight;
+}
+
+.msg-block:hover {
+    background-color: Highlight;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.msg-sender {
+    font-size: 20px;
+    border-bottom: 1px dashed black;
+}
+
+.msg-titleNdate {
+    display: block;
+}
+
+.msg-title-date {
+    display: block;
+}
+
+.msg-title {
+    font-size: 25px;
+    width: 50%;
+}
+
+.msg-date {
+    padding-top: 8px;
+    font-size: 15px;
+    float: right;
+}
+
+#ta-message {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.w-right {
+    float: right;
+}
+
+.write-alert-dist {
+    margin-top: 25px;
+}
+
+.no-msg {
+    padding-top: 20px;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+/* Write Modal CSS  from: https://bootsnipp.com/snippets/featured/sign-in-sign-up-dual-modal */
+.prettyline {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+/* GROUPS */
+.group-remove {
+    margin-top: -6px;
+    margin-right: -12px;
+}
+
+.group-form {
+    display: initial;
+}
+
+.group-edit {
+    margin-right: 5px;
+}
+
+.group-create {
+    text-align: center;
+}
+
+.group-create-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+/* MODAL LIST */
+
+.nav-first {
+    margin-left: 4px;
+}
+
+.form-control[readonly] {
+    background-color: white;
+}
+
+.modal-list.form-control[readonly]:focus {
+    -webkit-box-shadow: none;
+    border-color: #ccc;
+    outline: none;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
+.recipient-group {
+    margin-bottom: 5px;
+}

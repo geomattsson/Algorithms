@@ -1,0 +1,19 @@
+@model DistNet.Models.HomeViewModels.ReadViewModel
+@foreach (var preview in Model.MessagePreview)
+            {
+    <div class="msg-block @if (preview.Unread) {<text>unread</text>} "
+         id="msg-@preview.ID"
+         onclick="getMessage('@preview.ID')">
+        <div class="sender">
+            <div id="date-right">
+                @preview.Date.ToShortTimeString()
+            </div>
+        </div>
+        <div class="titleNdate">
+            @preview.Title
+            <div id="date-right">
+                @preview.Date.ToString("ddd d MMM")&nbsp;
+            </div>
+        </div>
+    </div>
+}

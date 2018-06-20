@@ -1,0 +1,19 @@
+
+@model DistNet.Models.HomeViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="col-md-4 col-md-offset-2 col-sm-offset-2 col-sm-4">
+        <h2>Account Information</h2>
+        Username: @Model.username <br />
+        Last login: @Model.lastLogin <br />
+        Logins last 30 days: @Model.loginsLastMonth <br />
+
+    </div>
+    <div class="col-md-4 col-sm-4">
+        <h2>Messages</h2>
+        Number of unread messages: @Model.unreadMessages <br />
+        <a asp-action="Read">Read messages</a>
+    </div>
+</div>

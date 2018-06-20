@@ -1,0 +1,11 @@
+@model DistNet.Models.HomeViewModels.SendersViewModel
+@foreach (var sender in Model.Senders)
+{
+    <div class="msg-block"
+         id="msg-@sender.Id"
+         onclick="getPreviews('@sender.Id')">
+        <div class="sender">
+            @sender.Name
+        </div>
+    </div>
+}

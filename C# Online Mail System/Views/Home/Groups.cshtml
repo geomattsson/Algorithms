@@ -1,0 +1,81 @@
+@model DistNet.Models.HomeViewModels.GroupsViewModel
+@{
+    ViewData["Title"] = "Groups";
+}
+<div class="row">
+    <div class="col-md-offset-2 col-md-4">
+        <h3 class="text-center">Your Groups</h3>
+        <div class="list-group">
+            @foreach (var group in Model.Active)
+            {
+                <div class="list-group-item group-list-item">
+                    <div class="list-group-item-text">
+                        @group.Name
+                        <form method="post" asp-action="Groups" class="group-form">
+                            <input value="@group.Id" hidden asp-for="Id" />
+                            <input value="@group.Remove" hidden asp-for="Remove" checked/>
+                            <button class="btn btn-sm btn-danger pull-right group-remove"
+                                    data-toggle="tooltip" type="submit"
+                                    data-placement="top" title="Remove from your groups"
+                                    id="@group.Id">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </form>
+                        @*<a class="btn btn-sm btn-primary pull-right group-remove group-edit"
+                           data-toggle="tooltip" asp-route="EditGroup" asp-fragment="@group.Id"
+                           data-placement="top" title="Edit group">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>*@
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h3 class="text-center">Available Groups</h3>
+        <div class="list-group">
+            @foreach (var group in Model.Available)
+            {
+                <div class="list-group-item group-list-item">
+                    <div class="list-group-item-text">
+                        @group.Name
+
+                        <form method="post" asp-action="Groups" class="group-form">
+                            <input value="@group.Id" hidden asp-for="Id" />
+                            <input value="@group.Remove" hidden asp-for="Remove"/>
+                            <button class="btn btn-sm btn-success pull-right group-remove"
+                                    data-toggle="tooltip" type="submit"
+                                    data-placement="top" title="Add to your groups"
+                                    id="@group.Id">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </form>
+                        @*<a class="btn btn-sm btn-primary pull-right group-remove group-edit"
+                           data-toggle="tooltip" asp-route="EditGroup" asp-fragment="@group.Id"
+                           data-placement="top" title="Edit group">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>*@
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-offset-5 col-md-2">
+        <div class="group-create">
+            <a class="btn btn-primary group-create-button"
+               asp-action="CreateGroup">
+                Create group
+            </a>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+}

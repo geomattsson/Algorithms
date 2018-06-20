@@ -1,0 +1,51 @@
+@model DistNet.Models.HomeViewModels.SendersViewModel
+@{
+    ViewData["Title"] = "Read";
+}
+<div class="read">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="msg-desc">
+                <a href="#" class="msg-update-btn"
+                   id="updateSenders" onclick="getSenders()">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                </a>
+                <h4>Received from</h4>
+            </div>
+            <div class="msg-senders">
+                @await Html.PartialAsync("~/Views/Home/Partials/SendersPartial.cshtml", Model)
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="msg-desc">
+                <a href="#" class="msg-update-btn"
+                   id="updatePreviews">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                </a>
+                <h4>Received Messages</h4>
+            </div>
+            <div class="msg-previews">
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="Message">
+                <div class="msg-default">
+                    Click on a message to view it.
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div id="MessageStats">
+                Total Messages: @Model.TotalMessages | Unread Messages: @Model.UnreadMessages | Deleted Messages: @Model.RemovedMessages
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/read.js"></script>
+}

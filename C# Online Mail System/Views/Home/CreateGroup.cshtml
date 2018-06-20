@@ -1,0 +1,46 @@
+@model DistNet.Models.HomeViewModels.CreateGroupViewModel
+@{
+    ViewData["Title"] = "CreateGroup";
+}
+<div class="row">
+    <div class="col-md-offset-4 col-md-4">
+        <h3>Create group</h3>
+        <form asp-action="CreateGroup">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success pull-right" />
+                <a asp-action="Groups" class="btn btn-danger">Cancel</a>
+            </div>
+        </form>
+        @if (ViewData["alertSuccess"] != null)
+        {
+            <div class="alert alert-success alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                Successfully created group <strong>@ViewData["alertSuccess"]</strong>
+            </div>
+        }
+        @if (ViewData["alertFail"] != null)
+        {
+            <div class="alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                Failed to create group<strong>@ViewData["alertFail"]</strong>
+            </div>
+        }
+        @if (ViewData["alertAT"] != null)
+            {
+            <div class="alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                A group can not contain <strong>@ViewData["alertAT"]</strong>
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts {
+@await Html.PartialAsync("_ValidationScriptsPartial")
+}

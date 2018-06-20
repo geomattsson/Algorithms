@@ -1,0 +1,24 @@
+@model DistNet.Models.HomeModels.ReadMail
+<div class="msg-sender">
+    <div class="pull-right">
+        <a href="#" onclick="doRemove('@Model.ID')"><span class="glyphicon glyphicon-remove" style="color:red;"></span></a>
+    </div>
+    @Model.Sender
+</div>
+<div class="msg-titleNdate">
+    <div class="msg-title-date">
+        <div class="msg-date">
+            @Model.Date.ToShortTimeString() 
+            @Model.Date.ToLongDateString()
+        </div>
+        <div class="msg-title">
+            @Model.Title
+        </div>
+    </div>
+</div>
+<div class="msg-text">
+    @Model.Message
+    <br />
+    <br />
+    <br />
+</div>

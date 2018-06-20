@@ -1,0 +1,11 @@
+﻿@model DistNet.Models.HomeViewModels.RecipientViewModel
+
+@foreach (var r in Model.Recipients)
+{
+    <div class="input-group recipient-group">
+        <input type="email" class="modal-list form-control" id="exampleInputEmail1" value="@r.Name" readonly="readonly" tabindex="-1">
+        <span class="input-group-btn">
+            <a href="#" class="btn btn-success" onclick="addRecipient('@r.Name')">Add Recipient</a>
+        </span>
+    </div>
+}
